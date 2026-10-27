@@ -1,18 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Link, router } from "expo-router";
+import { Button, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
 
-	// A function die code gebruikt om naar een andere pagina te navigeren komt hier.
+	const gotoProjects = () => {
+		router.navigate('/projects');
+	}
 
 
 	return (
 		<View style={styles.mc}>
 
 			<Text style={styles.title}>Home</Text>
-			
-			{/* Een link om naar een andere pagina te navigeren komt hier */}
-			
-			{/* Een Button om naar een andere pagina te navigeren komt hier */}
+
+
+			<Link href={'/contact'} style={styles.link}>Contact</Link>
+
+			<Button title="Projects" onPress={gotoProjects}></Button>
 
 		</View>
 	);
@@ -34,4 +38,4 @@ const styles = StyleSheet.create({
 		color: 'blue',
 		marginVertical: 20
 	}
-})
+});

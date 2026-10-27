@@ -1,11 +1,12 @@
+import { useLocalSearchParams } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function Project() {
-// hier komt een 'hook' waarmee we de data uit de URL kunnen halen.
+	const { pid } = useLocalSearchParams();
 
   return (
 	<View style={styles.mc}>
-	  <Text style={styles.title}>Project ?</Text>
+	  <Text style={styles.title}>Project { pid }</Text>
 	</View>
   )
 }
